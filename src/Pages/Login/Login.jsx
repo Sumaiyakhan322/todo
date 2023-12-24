@@ -2,7 +2,7 @@
 import { useContext } from "react";
 import SocailLogin from "../../Shared/SocailLogin";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Swal from "sweetalert2";
 
@@ -12,7 +12,7 @@ import Swal from "sweetalert2";
 const Login = () => {
     const {signIn}=useContext(AuthContext)
   
-    const location=useLocation()
+    
     const navigate=useNavigate()
     const [error,setError]=useState('')
     const handleLogIn=(e)=>{
@@ -33,7 +33,8 @@ const Login = () => {
                 timer: 1500
               })
               e.target.reset();
-              navigate(location?.state ? location.state :'/')
+              
+              navigate('/dashboard/allTasks')
         })
         .catch((error) => {
          const errormessage=error.message;

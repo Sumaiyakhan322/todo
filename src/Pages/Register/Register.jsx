@@ -49,7 +49,7 @@ const Register = () => {
           });
     
           e.target.reset();
-          navigate("/");
+          navigate('/dashboard/allTasks');
         }
       } 
       

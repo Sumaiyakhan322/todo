@@ -4,6 +4,9 @@ import Landing from "../Pages/Landing.jsx/Landing";
 import Main from "../Layouts/Main";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import Private from "../Private/Private";
+import AddTask from "../Pages/Dashborad/AddTask";
+import AllTask from "../Pages/Dashborad/AllTask";
 
 
 const router = createBrowserRouter([
@@ -23,7 +26,19 @@ const router = createBrowserRouter([
         }
     
     ]
-    },
+    },{
+      path:'dashboard',
+      element:<Private><Dashboard></Dashboard></Private>,
+      children:[{
+        path:'addTask',
+        element:<AddTask></AddTask>,
+
+      },{
+        path:'allTasks',
+        element:<AllTask></AllTask>
+      }
+    ]
+    }
   ]);
 
   export default router;
