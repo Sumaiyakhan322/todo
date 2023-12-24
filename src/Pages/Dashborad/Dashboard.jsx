@@ -21,7 +21,7 @@ const Dashboard = () => {
     };
  
     const {data,isPending} =useQuery({
-         queryKey:[user?.email,'isAdmin'],
+         queryKey:[user?.email,'users'],
         //  enabled:!loading,
          queryFn:async ()=>{
             const res=await axiosPublic.get(`/users`)
