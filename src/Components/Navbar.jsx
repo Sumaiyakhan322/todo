@@ -68,10 +68,10 @@ const Navbar = () => {
           <NavLink to={"/dashboard/allTasks"}  className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "" : ""
         }>
-            Dashboard
+           Let’s Explore
           </NavLink>
           
-        ):<NavLink to={'/login'} >  Dashboard</NavLink> }
+        ):<NavLink to={'/login'} >Let’s Explore</NavLink> }
        
         </li>
       </>

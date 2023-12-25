@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
-import AddTask from "./AddTask";
+
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../../Loading";
@@ -20,37 +20,28 @@ const Dashboard = () => {
 
     };
  
-    const {data,isPending} =useQuery({
-         queryKey:[user?.email,'users'],
-        //  enabled:!loading,
-         queryFn:async ()=>{
-            const res=await axiosPublic.get(`/users`)
-             return res.data;
-         }
-     })
-     if(isPending) return <Loading></Loading>
-     const loginUser=data?.find(user=>user?.email===userEmail)
-     console.log(loginUser);
+
+     
      
     return (
         <div>
             {/* <AddTask></AddTask> */}
             <div className="flex flex-col md:flex-row">
        
-       <div className="md:w-64 bg-[#193e51] md:min-h-screen ">
+       <div className="md:w-64 bg-sky-800 md:min-h-screen ">
          <ul className="menu flex flex-row md:flex-col text-white">
            <li>
            <Link to={"/"}>
                {" "}
-               <span className="cursor-pointer text-3xl text-yellow-300 flex">
+               <span className="cursor-pointer text-3xl text-pink-400   flex">
                  Find Your Tasks
                </span>
              </Link>
            </li>
-           <li >
+           
            {user && (
               <>
-                <div className="flex-col flex gap-5 ">
+                <div className="flex-col flex gap-5 font-bold ">
                   <div className="flex items-center space-x-2 flex-col-reverse  ">
                     <p className="font-bold text-lg  ">
                       {user?.displayName}
@@ -62,7 +53,7 @@ const Dashboard = () => {
                     />
                   </div>
                   <button
-                    className="block md:btn-lg btn-sm btn text-[#146666] hover:bg-white  font-bold border  hover:border-#c3bd2e "
+                    className="block md:w-4/12 mx-auto md:btn btn-sm btn text-[#146666] hover:bg-white  font-bold border  hover:border-#c3bd2e "
                     onClick={handleSignOut}
                   >
                     SignOut
@@ -70,25 +61,26 @@ const Dashboard = () => {
                 </div>
               </>
             )}
-           </li>
+        
           
  
-           {/* common links */}
-           <div className="divider"></div>
+          
+           <div className="divider "></div>
+         
            <li>
-             <NavLink to={"/dashboard/addTasks"} className={({ isActive, isPending }) =>
-         isPending ? "pending" : isActive ? "text-yellow-300" : ""
+             <NavLink to={"/dashboard/allTasks"} className={({ isActive, isPending }) =>
+         isPending ? "pending" : isActive ? "text-pink-400" : ""
        }>
                {" "}
-             Add Tasks
+              All Tasks
              </NavLink>
            </li>
            <li>
-             <NavLink to={"/classes"} className={({ isActive, isPending }) =>
-         isPending ? "pending" : isActive ? "text-yellow-300" : ""
+             <NavLink to={"/dashboard/addTasks"} className={({ isActive, isPending }) =>
+         isPending ? "pending" : isActive ? "text-pink-400" : ""
        }>
                {" "}
-              Classes
+             Add Tasks
              </NavLink>
            </li>
            <li>
