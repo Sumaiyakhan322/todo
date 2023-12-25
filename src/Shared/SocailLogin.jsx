@@ -16,12 +16,13 @@ const SocailLogin = () => {
         const userInfo={
           email:result?.user?.email ,
           name:result?.user?.displayName,
-          role:'member'
+          image:result?.user?.photoURL,
+          job:'Web-developer'
    }
    axiosPublic.post('/users',userInfo)
    .then(res=>{
     console.log(res.data);
-    navigate('/')
+    navigate('/dashboard/allTasks')
    })
       })
       .catch(err=>console.log(err))
@@ -31,7 +32,7 @@ const SocailLogin = () => {
              <div className="mx-auto my-10 text-center">
        
        <div className="divider "></div>
-        <button className="btn" onClick={handleGoogle}>
+        <button className="btn bg-blue-400 text-black " onClick={handleGoogle}>
       <FaGoogle></FaGoogle>
 Google
       </button>

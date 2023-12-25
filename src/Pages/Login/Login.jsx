@@ -72,7 +72,7 @@ const Login = () => {
      </div>
      {error && <p className='text-red-500 '>{error}</p>}
      <div className="form-control mt-6">
-       <button className="btn bg-gradient-to-r from-[#193e51] to-[#146666]hover:bg-white hover:border hover:border-[#193e51] text-[#fcf540] font-bold ">Login</button>
+       <button className="btn bg-blue-400 hover:bg-blue-200 hover:border hover:border-[#193e51]  font-bold ">Login</button>
      </div>
      <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
                <p className="mx-4 mb-0 text-center font-semibold text-black">
@@ -86,7 +86,7 @@ const Login = () => {
                {/* <!-- Google --> */}
               <SocailLogin></SocailLogin>
              
-    <p className='text-black'>Do not have any account ? Go to <Link className='text-[#c3bd2e] font-bold underline' to='/register'>Register</Link></p>
+    <p className='text-black'>Do not have any account ? Go to <Link className='text-blue-400 font-bold underline' to='/register'>Register</Link></p>
       </form>
        </div>
        </div>

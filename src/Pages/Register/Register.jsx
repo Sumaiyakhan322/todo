@@ -22,8 +22,9 @@ const Register = () => {
       const name = e.target.name.value;
       const email = e.target.email.value;
       const password = e.target.password.value;
-      const photo = e.target.photo.value;
+      const image = e.target.photo.value;
       const job = e.target.job.value;
+      const description=e.target.des.value;
     
       setError("");
     
@@ -32,10 +33,10 @@ const Register = () => {
     
         await updateProfile(result.user, {
           displayName: `${name}`,
-          photoURL: `${photo}`,
+          photoURL: `${image}`,
         });
     
-        const userInfo = { name, email, job };
+        const userInfo = { name, email, job,image ,description};
     
         const res = await axiosPublic.post('/users', userInfo);
     
@@ -100,13 +101,22 @@ const Register = () => {
                
                 
               </div>
+              <div className="form-control relative">
+                <label className="label">
+                  <span className="label-text text-xl text-[#193e51]">Your Job</span>
+                </label>
+                {/* <input type='text' name="job" placeholder="Job" className="input input-bordered text-black" required />   */}
+                <textarea className="textarea textarea-bordered " placeholder="Job description" name='des'></textarea>
+               
+                
+              </div>
               
               <div className="form-control mt-6 ">
-               <input type="submit" className=' btn bg-gradient-to-r from-[#193e51] to-[#146666]hover:bg-white hover:border hover:border-[#193e51] text-[#fcf540] font-bold'  value={'Register'} />
+               <input type="submit" className=' btn bg-blue-400 hover:bg-blue-200 hover:border hover:border-[#193e51]  font-bold'  value={'Register'} />
               </div>
             </form>
             </div>
-           <p className='text-black'>have already account <Link to='/login' className=" text-[#c3bd2e] font-bold underline">Log in</Link> </p>
+           <p className='text-black'>have already account <Link to='/login' className=" text-blue-500 font-bold underline ">Log in</Link> </p>
             <SocailLogin></SocailLogin>
           </div>
         </div>

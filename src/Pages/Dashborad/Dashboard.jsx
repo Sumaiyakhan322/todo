@@ -83,11 +83,11 @@ const Dashboard = () => {
              </NavLink>
            </li>
            <li>
-             <NavLink to={"/trainer"} className={({ isActive, isPending }) =>
+             <NavLink to={"/blogs"} className={({ isActive, isPending }) =>
          isPending ? "pending" : isActive ? "text-yellow-300" : ""
        }>
                {" "}
-             Trainer
+             Blogs
              </NavLink>
            </li>
          </ul>

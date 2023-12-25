@@ -4,19 +4,16 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { MdOutlineTask } from "react-icons/md";
 
 const Navbar = () => {
-    const { user, logout } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
    
-    const handleSignOut = (e) => {
-      e.preventDefault();
-      logout().then().catch();
-    };
+    
     const navLinks = (
       <>
         <li className="hover:bg-[#aac7c7]  rounded-lg nav ">
           <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-              isPending ? "" : isActive ? "" : ""
+              isPending ? "" : isActive ? "text-pink-600" : ""
             }
           >
             Home
@@ -24,45 +21,35 @@ const Navbar = () => {
         </li>
         <li className="hover:bg-[#aac7c7]  rounded-lg nav">
           <NavLink
-            to="/gallery"
+            to="/blogs"
             className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "" : ""
+              isPending ? "pending" : isActive ? "text-pink-600" : ""
             }
           >
-            Gallery
+           Blogs
           </NavLink>
         </li>
         <li className="hover:bg-[#aac7c7] rounded-lg nav">
           <NavLink
-            to={`/trainer`}
+            to={`/aboutUs`}
             className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "" : ""
+              isPending ? "pending" : isActive ? "text-pink-600" : ""
             }
           >
-            Trainer
+           About us
           </NavLink>
         </li>
         <li className="hover:bg-[#aac7c7] rounded-lg nav">
           <NavLink
-            to={`/classes`}
+            to={`/contact`}
             className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "" : ""
+              isPending ? "pending" : isActive ? "text-pink-600" : ""
             }
           >
-            Classes
+           Features
           </NavLink>
         </li>
-        <li className="hover:bg-[#aac7c7] rounded-lg nav">
-          <NavLink
-            to={`/forums`}
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "" : ""
-            }
-          >
-            Forums
-          </NavLink>
-  
-        </li>
+       
         <li  className="hover:bg-[#aac7c7] rounded-lg nav">
         {user ?  (
           <NavLink to={"/dashboard/allTasks"}  className={({ isActive, isPending }) =>
@@ -79,7 +66,7 @@ const Navbar = () => {
     return (
         <div>
       <div>
-        <div className="navbar p-4 sticky inset-0  z-10  flex flex-col gap-5 md:flex-row justify-between  bg-gradient-to-r from-emerald-400 to-sky-400 text-black ">
+        <div className="navbar p-4 sticky inset-0  z-10  flex flex-col gap-5 md:flex-row justify-between  bg-gradient-to-r from-emerald-200 to-sky-200 text-black ">
           <div className=" flex flex-col-reverse md:flex-row lg:navbar-start">
             <div className="dropdown  ">
               <label tabIndex={0} className="btn btn-ghost lg:hidden ">
