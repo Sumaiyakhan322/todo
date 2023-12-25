@@ -86,7 +86,7 @@ const AllTask = () => {
     <>
       {" "}
       <div className="flex flex-col md:flex-row gap-10">
-        <div className=" md:w-1/3 w-full border border-blue-600 rounded-lg p-6">
+        <div className=" md:w-1/3 w-full border border-blue-600 rounded-lg p-6" >
           <h1 className="text-blue-500 font-bold text-center mb-10">
             To-do-lists
           </h1>
