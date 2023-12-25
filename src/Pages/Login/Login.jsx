@@ -5,6 +5,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import GithubLogin from "../../Shared/GithubLogin";
 
 
 
@@ -82,9 +83,10 @@ const Login = () => {
 
              {/* <!-- Social login buttons --> */}
 
-          
-               {/* <!-- Google --> */}
-              <SocailLogin></SocailLogin>
+             <div className="flex mx-auto gap-10">
+            <SocailLogin></SocailLogin>
+            <GithubLogin></GithubLogin>
+            </div>
              
     <p className='text-black'>Do not have any account ? Go to <Link className='text-blue-400 font-bold underline' to='/register'>Register</Link></p>
       </form>

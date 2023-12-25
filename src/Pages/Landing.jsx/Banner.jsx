@@ -15,7 +15,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
+
 const Banner = () => {
+  
   return (
     <div>
       <div className="mt-0">
@@ -51,7 +53,7 @@ const Banner = () => {
                       data-te-ripple-init
                       data-te-ripple-color="light"
                       href="#!"
-                      role="button"
+                      role="button" 
                     >
                       Learn more
                     </a>
@@ -82,7 +84,7 @@ const Banner = () => {
                       data-te-ripple-init
                       data-te-ripple-color="light"
                       href="#!"
-                      role="button"
+                      role="button" 
                     >
                       Learn more
                     </a>

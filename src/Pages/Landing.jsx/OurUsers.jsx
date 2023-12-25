@@ -1,10 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Loading from "../../Loading";
+import { useEffect } from "react";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const OurUsers = () => {
+    useEffect(() => {
+        AOS.init({
+          duration: 2000, // Animation duration in milliseconds
+          once: true, // Only animate once
+        });
+      }, []);
     const axiosPublic = useAxiosPublic();
+    
   const { data, isPending } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
@@ -18,7 +28,7 @@ const OurUsers = () => {
         <div>
            
             <section className="my-32 text-center">
-  <h2 className="mb-12 md:text-5xl font-bold text-blue-400 text-3xl">Our benefited users</h2>
+  <h2 className="mb-12 md:text-5xl font-bold text-blue-400 text-3xl" data-aos="fade-up" >Our benefited users</h2>
   <div className="grid gap-x-6 md:grid-cols-3 lg:gap-x-12 gap-20">
     {
         data.map(users=>(

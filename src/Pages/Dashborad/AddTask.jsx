@@ -3,12 +3,14 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import { useNavigate } from "react-router-dom";
 
 const AddTask = () => {
   const axiosPublic = useAxiosPublic();
   const { user } = useContext(AuthContext);
   const email = user?.email;
   const todo = "todo";
+  const navigate=useNavigate()
   
 
   const { register, handleSubmit, reset } = useForm();
@@ -25,6 +27,7 @@ const AddTask = () => {
           timer: 1500,
         }).then(() => {
           reset();
+navigate('/dashboard/allTasks')
         });
       }
     });

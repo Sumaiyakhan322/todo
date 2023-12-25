@@ -25,10 +25,10 @@ const Dashboard = () => {
     return (
         <div>
             {/* <AddTask></AddTask> */}
-            <div className="flex flex-col md:flex-row">
+            <div className="flex flex-col  md:flex-row">
        
        <div className="md:w-64 bg-sky-800 md:min-h-screen ">
-         <ul className="menu flex flex-row md:flex-col text-white">
+         <ul className="menu flex flex-row md:flex-col text-white items-center">
            <li>
            <Link to={"/"}>
                {" "}
@@ -52,7 +52,7 @@ const Dashboard = () => {
                     />
                   </div>
                   <button
-                    className="block md:w-4/12 mx-auto md:btn btn-sm btn text-[#146666] hover:bg-white  font-bold border  hover:border-#c3bd2e "
+                    className="block  mx-auto md:btn-lg btn-sm btn text-[#146666] hover:bg-white  font-bold border  hover:border-#c3bd2e "
                     onClick={handleSignOut}
                   >
                     SignOut
@@ -82,18 +82,11 @@ const Dashboard = () => {
              Add Tasks
              </NavLink>
            </li>
-           <li>
-             <NavLink to={"/blogs"} className={({ isActive, isPending }) =>
-         isPending ? "pending" : isActive ? "text-yellow-300" : ""
-       }>
-               {" "}
-             Blogs
-             </NavLink>
-           </li>
+        
          </ul>
        </div>
        {/* dashborad */}
-       <div className="flex-1 p-8 ">
+       <div className="flex-1 md:p-8  p-3">
          <Outlet></Outlet>
        </div>
      </div>

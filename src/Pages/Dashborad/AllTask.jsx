@@ -94,18 +94,18 @@ const AllTask = () => {
             {loginUserTodo.map((todo) => (
               <div
                 key={todo._id}
-                className="card   shadow-2xl bg-blue-100 text-black"
+                className="card  shadow-2xl bg-blue-100 text-black"
               >
                 <div className="card-body items-center text-center">
                     <div className="flex text-2xl text-blue-600  ml-auto">
                         <button onClick={()=>handelDelete(todo._id)}><MdDelete></MdDelete></button>
                         <Link to={`/dashboard/update/${todo._id}`}><MdUpdate></MdUpdate></Link>
                     </div>
-                  <h2 className="card-title">
-                    <span className="font-bold">Task-name:</span>
+                    <h2 className=" ">
+                   <span className="font-bold">Task-name:</span> 
                     {todo.name}
                   </h2>
-                  <p>
+                  <p className="">
                     <span className="font-bold">Task-description:</span>
                     {todo.des}
                   </p>
@@ -140,9 +140,9 @@ const AllTask = () => {
                 key={todo._id}
                 className="card   shadow-2xl bg-blue-100 text-black"
               >
-                <div className="card-body items-center text-center">
-                  <h2 className="card-title">
-                    <span className="font-bold">Task-name:</span>
+                <div className="card-body items-center text-center  ">
+                  <h2 className=" ">
+                   <span className="font-bold">Task-name:</span> 
                     {todo.name}
                   </h2>
                   <p>
@@ -181,7 +181,7 @@ const AllTask = () => {
                 className="card   shadow-2xl bg-blue-100 text-black"
               >
                 <div className="card-body items-center text-center">
-                  <h2 className="card-title">
+                  <h2 className="">
                     <span className="font-bold">Task-name:</span>
                     {todo.name}
                   </h2>

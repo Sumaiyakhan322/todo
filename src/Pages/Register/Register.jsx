@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 import { updateProfile } from "firebase/auth";
+import GithubLogin from "../../Shared/GithubLogin";
 
 
 
@@ -117,7 +118,10 @@ const Register = () => {
             </form>
             </div>
            <p className='text-black'>have already account <Link to='/login' className=" text-blue-500 font-bold underline ">Log in</Link> </p>
+            <div className="flex mx-auto gap-10">
             <SocailLogin></SocailLogin>
+            <GithubLogin></GithubLogin>
+            </div>
           </div>
         </div>
       </div>

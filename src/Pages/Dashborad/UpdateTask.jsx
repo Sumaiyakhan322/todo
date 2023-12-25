@@ -111,7 +111,7 @@ const UpdateTask = () => {
                 </select>
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-blue-500">Add Task</button>
+                <button className="btn bg-blue-500">Update Task</button>
               </div>
             </form>
           </div>
