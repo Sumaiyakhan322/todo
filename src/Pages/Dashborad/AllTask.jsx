@@ -117,12 +117,18 @@ const AllTask = () => {
                     <span className="font-bold">Priority:</span>
                     {todo.priority}
                   </p>
-                  <div className="card-actions justify-end">
+                  <div className="card-actions mx-auto  ">
                     <button
-                      className="btn bg-blue-500"
+                      className="btn bg-blue-500 mx-auto"
                       onClick={() => handleOngoing(todo._id)}
                     >
                       On-going
+                    </button>
+                    <button
+                      className="btn bg-blue-500 mx-auto"
+                      onClick={() => handleComplete(todo._id)}
+                    >
+                      Complete
                     </button>
                   </div>
                 </div>
