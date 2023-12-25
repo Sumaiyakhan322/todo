@@ -1,18 +1,17 @@
 import { useContext } from "react";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
+
 
 import { AuthContext } from "../../Providers/AuthProvider";
-import { useQuery } from "@tanstack/react-query";
-import Loading from "../../Loading";
+
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 
 
 const Dashboard = () => {
-    const axiosPublic=useAxiosPublic();
+   
     const navigate=useNavigate()
     
     const {user,logout}=useContext(AuthContext)
-     const userEmail=user?.email;
+    
      const handleSignOut = (e) => {
       e.preventDefault();
       logout().then().catch();

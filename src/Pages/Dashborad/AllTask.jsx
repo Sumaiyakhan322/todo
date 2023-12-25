@@ -99,7 +99,7 @@ const AllTask = () => {
                 <div className="card-body items-center text-center">
                     <div className="flex text-2xl text-blue-600  ml-auto">
                         <button onClick={()=>handelDelete(todo._id)}><MdDelete></MdDelete></button>
-                        <MdUpdate></MdUpdate>
+                        <Link to={`/dashboard/update/${todo._id}`}><MdUpdate></MdUpdate></Link>
                     </div>
                   <h2 className="card-title">
                     <span className="font-bold">Task-name:</span>

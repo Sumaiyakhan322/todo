@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import Private from "../Private/Private";
 import AddTask from "../Pages/Dashborad/AddTask";
 import AllTask from "../Pages/Dashborad/AllTask";
+import UpdateTask from "../Pages/Dashborad/UpdateTask";
 
 
 const router = createBrowserRouter([
@@ -36,6 +37,9 @@ const router = createBrowserRouter([
       },{
         path:'allTasks',
         element:<AllTask></AllTask>
+      },{
+        path:'update/:id',
+        element:<UpdateTask></UpdateTask>
       }
     ]
     }
