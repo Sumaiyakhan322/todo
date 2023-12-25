@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../../Loading";
@@ -10,6 +10,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const UpdateTask = () => {
     const { register, handleSubmit,  } = useForm();
+    const navigate=useNavigate()
     const {id}=useParams()
     const axiosPublic = useAxiosPublic();
     const {user}=useContext(AuthContext)
@@ -28,19 +29,20 @@ const UpdateTask = () => {
 
     const onSubmit = (formData) => {
       const todoTask = {...formData,todo:'todo',email};
-      axiosPublic.put(`/toDoList/${id}`, todoTask).then((res) => {
+      axiosPublic.patch(`/toDoListUpdated/${id}`, todoTask).then((res) => {
         if (res.data.modifiedCount > 0) {
           Swal.fire({
             position: "center",
             icon: "success",
-            title: `Successfully add the tasks`,
+            title: `Successfully updated the tasks`,
             showConfirmButton: false,
             timer: 1500,
           }).then(() => {
             
             
           });
-          
+
+         navigate('/dashboard/allTasks') 
         }
       });
     };

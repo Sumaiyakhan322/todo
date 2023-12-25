@@ -1,5 +1,5 @@
-## The website name is : WebBazaar
-## Live link of this website is:[Click here to go to TaskCrafted   website ](//https://todo-app-4b547.web.app//)
+## The website name is : TaskCrafted 
+## Live link of this website is:[Click here to go to TaskCrafted   website ](//https://todo-app-4b547.web.app)
 
 
 ## The TaskCrafted  is a website of many features
